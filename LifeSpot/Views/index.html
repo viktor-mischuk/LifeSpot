@@ -5,24 +5,34 @@
     <title>LifeSpot</title>
     <!--Подключение стилей по относительному пути из внешнего файла-->
     <link href="../Static/CSS/index.css" rel="stylesheet" type="text/css">
+    <script defertype="text/javascript" src="../Static/JS/index.js"></script>
+    <!-- Внутренний скрипт с вызовами функций -->
+    <script >
+        // Проверка на возраст
+        //checkAge();
 
+        // сохранение сессии
+        handleSession();
+
+        // вывод данных сессии в консоль
+        sessionLog();
+
+        // функция для получения пользовательского ввода    
+        const inputParseFunction = function () {
+            return document.getElementsByTagName('input')[0].value.toLowerCase();
+        }
+    </script>
 </head>
 
 <body>
     <div class="bordered">
         <!--Хедер страницы находится сразу над тегом body-->
-        <header>
-            <!--Заголовок страницы-->
+        <header id="header-index">
             <h1>LifeSpot - прямые трансляции с улиц</h1>
-            <!--Параграф-->
             <p>Покажем, что происходит прямо сейчас</p>
-            <div class="seeker">
-                <label for="name">Что будем искать?</label>
-                <input  type="text" />
-            </div>
-           
+            <input type="text"  oninput="filterContent( inputParseFunction )" size=50%>
         </header>
-        <!--Сайд-бар страницы-->
+        <!--Сайд-бар страницы25-->
         <aside id="sidebar">
             <div class="navbar">
                 <p>Все трансляции</p>
